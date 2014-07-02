@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     u.update_attributes(user_params)
     respond_to do |format|
       format.html { render html: u.avatar.url }
-      format.json { render json: { success: true, image_path: u.avatar.url } }
     end
   end
 
