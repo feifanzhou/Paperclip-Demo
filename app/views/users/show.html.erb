@@ -1,7 +1,12 @@
-<%= image_tag @user.avatar.url %>
+<div id='imageView'>
+  <%= image_tag @user.avatar.url, size: '200x200', id: 'image' %>
+  <div class='Hidden' id='spinnerContainer'>
+    <span class='fa fa-spinner fa-spin fa-2x' id='uploadSpinner'></span>
+  </div>
+</div>
 
 <h1>Change photo</h1>
 <%= form_for @user, html: { multipart: true } do |f| %>
   <%= f.file_field :avatar %>
-  <%= f.submit 'Upload' %>
+  <%= f.submit 'Upload', id: 'submitImage' %>
 <% end %>

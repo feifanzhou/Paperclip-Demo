@@ -1,3 +1,42 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin vendor-prefix($name, $argument) {
+  #{$name}: #{ $argument };
+  -webkit-#{$name}: #{ $argument };
+  -ms-#{$name}: #{ $argument };
+  -moz-#{$name}: #{ $argument };
+  -o-#{$name}: #{ $argument };
+}
+
+#imageView {
+  display: inline-block;
+  height: 200px;
+  position: relative;
+  width: 200px;
+  #image {
+    @include vendor-prefix(transition, opacity 0.5s);
+    display: inline-block;
+    float: left;
+    &.Fade {
+      opacity: 0.25;
+    }
+  }
+  #spinnerContainer {
+    bottom: 0;
+    display: inline-block;
+    float: left;
+    height: 32px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    &.Hidden {
+      display: none;
+    }
+  }
+}
