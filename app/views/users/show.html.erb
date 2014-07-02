@@ -1,0 +1,7 @@
+<%= image_tag @user.avatar.url %>
+
+<h1>Change photo</h1>
+<%= form_for @user, html: { multipart: true } do |f| %>
+  <%= f.file_field :avatar %>
+  <%= f.submit 'Upload' %>
+<% end %>
