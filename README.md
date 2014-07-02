@@ -1,4 +1,4 @@
 Paperclip-Demo
 ==============
 
-Example code to use Paperclip gem for uploading images. Includes code for AJAX-style uploads
+Example code to use Paperclip gem for uploading images. Includes code for AJAX-style uploads (in the `ajax-style` branch)
