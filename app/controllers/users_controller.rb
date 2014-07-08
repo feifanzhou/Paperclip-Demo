@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   def update
     u = User.find(params[:id])
     u.update_attributes(user_params)
-    redirect_to user_path(u)
+    respond_to do |format|
+      format.html { render html: u.avatar.url }
+    end
   end
 
   private
